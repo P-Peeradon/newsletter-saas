@@ -1,9 +1,22 @@
-"use client"
+import Hero from "../landing/hero";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 export default function Home() {
     return (
-        <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-            <h1>Hello World</h1>
-        </div>
+        <main className="min-h-screen bg-white dark:bg-black">
+            <Hero />
+            {/* <Features />
+            <HowItWorks /> */}
+            
+            <SignedIn>
+                <div className="fixed top-4 right-4">
+                    <UserButton />
+                </div>
+            </SignedIn>
+
+            {/* <Pricing />
+            <CTA />
+            */ }
+        </main>
     );
 }
